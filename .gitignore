@@ -1,0 +1,6 @@
+Gemfile.lock
+.rvmrc
+.ruby-gemset
+.ruby-version
+.sass-cache
+node_modules
