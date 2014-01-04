@@ -14,14 +14,14 @@
 1. Скачать и установить последнюю версию [nodeJS](http://nodejs.org/download/)
 2. После установки у Вас будет доступен **node package manager**
 3. `npm install -g grunt`
-4. Ознакомьтесь со статьей [по установке git](http://git-scm.com/book/ru/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Git) под Вашу операционную систему
+4. Ознакомьтесь со статьей [по установке git](http://git-scm.com/book/ru/%D0%92%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-Git), под Вашу операционную систему
 
 Эти 4 шага, Вы выполняете разово, и больше этого не потребуется. В них мы устанавливаем программы, знание которых **не является обязательным**, для работы с fewatcher
 
 ###Начнем
 Для начала работы с новым проектом, Вам нужно будет выполнить 3 новых команды:
 
-1. `git clone git@github.com:jslby/fewatcher.git my_project` где `my_project` это директория, где будет Ваше приложение
+1. `git clone git@github.com:jslby/fewatcher.git my_project`, где `my_project` это директория, где будет Ваше приложение
 2. `npm install`
 3. `grunt`
 
