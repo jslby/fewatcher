@@ -9,6 +9,9 @@ module.exports = function(grunt){
           expand: true,
           ext: '.html',
         }]
+      },
+      options: {
+        pretty: true,
       }
     },
     stylus: {
@@ -21,6 +24,34 @@ module.exports = function(grunt){
           ext: '.css',
         }]
       }
+    },
+    imagemin: {
+      dynamic: {
+        files: [{
+          expand: true,
+          cwd: 'source/img',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'dest/img',
+        }]
+      }
+    },
+    copy: {
+      css: {
+        files: [{
+          cwd: 'source/css',
+          src: ['**/*.css'],
+          dest: 'dest/css',
+          expand: true,
+        }]
+      },
+      js: {
+        files: [{
+          cwd: 'source/js',
+          src: ['**/*.js'],
+          dest: 'dest/js',
+          expand: true,
+        }]
+      },
     },
     watch: {
       livereload: {
@@ -50,16 +81,6 @@ module.exports = function(grunt){
         tasks: ['imagemin'],
       }
     },
-    imagemin: {
-      dynamic: {
-        files: [{
-          expand: true,
-          cwd: 'source/img/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'dest/img/',
-        }]
-      }
-    },
     connect: {
       server: {
         options: {
@@ -68,24 +89,6 @@ module.exports = function(grunt){
         }
       }
     },
-    copy: {
-      css: {
-        files: [{
-          cwd: 'source/css/',
-          src: ['**/*.css'],
-          dest: 'dest/css/',
-          expand: true,
-        }]
-      },
-      js: {
-        files: [{
-          cwd: 'source/js/',
-          src: ['**/*.js'],
-          dest: 'dest/js/',
-          expand: true,
-        }]
-      },
-    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-jade');
@@ -93,12 +96,14 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('default', [
     'connect', 
     'copy', 
     'jade', 
     'stylus',
+    'imagemin',
     'watch', 
   ]);
 };
